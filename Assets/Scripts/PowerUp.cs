@@ -74,7 +74,7 @@ public class PowerUp : MonoBehaviour
 
     /* feel free to use/modify/change all of these */
     /* there are more than one way to solve this problem */
-    void applyPowerUp(POWERUP p)
+    void applyPowerUp(PowerUp p)
     {
         if (p)
         {
@@ -121,7 +121,7 @@ public class PowerUp : MonoBehaviour
 
             // remove all powerup component scripts from the clone 
             // otherwise you will have an infinite loop and it will crash your PC
-            Destroy(obj.GetComponent<POWERUP>());
+            Destroy(obj.GetComponent<PowerUp>());
 
             // how many children are already attached to the player?
             // you may wish to use a specific powerup name to see how many powerups are already applied
@@ -137,7 +137,7 @@ public class PowerUp : MonoBehaviour
         }
         else
         {
-            pother = collision.gameObject.GetComponent<POWERUP>();
+            pother = collision.gameObject.GetComponent<PowerUp>();
             // think about what this is doing here and modify for your own purposes
             if (collision.gameObject.name.Contains("REVERSE"))
             {
